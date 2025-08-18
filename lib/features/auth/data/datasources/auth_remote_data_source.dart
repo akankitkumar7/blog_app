@@ -15,6 +15,7 @@ abstract interface class AuthRemoteDataSource {
   });
 }
 
+
 class AuthRemoteDataSourceImplementation implements AuthRemoteDataSource {
   final SupabaseClient supabaseClient;
 
