@@ -7,7 +7,12 @@ class BlogEditor extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      controller: controller,
+      validator: (value){
+        if(value!.isEmpty){
+          return '$hintText is empty';
+        }
+        return null;
+      },
       decoration: InputDecoration(
         hintText: hintText,
       ),
