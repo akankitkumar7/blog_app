@@ -121,7 +121,7 @@ class _AddNewBlogPageState extends State<AddNewBlogPage> {
                               child: Container(
                                 height: 115,
                                 width: double.infinity,
-                                child: const Column(
+                                child:  const Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Icon(Icons.folder_open, size: 40),
@@ -145,6 +145,17 @@ class _AddNewBlogPageState extends State<AddNewBlogPage> {
                           'Programming',
                           'Entertainment',
                           'News',
+                          'Health',
+                          'Science',
+                          'Sports',
+                          'Education',
+                          'Travel',
+                          'Food',
+                          'Lifestyle',
+                          'Finance',
+                          'AI & ML',
+                          'Startups',
+                          'Politics',
                         ].map((e) => Padding(
                                   padding: const EdgeInsets.all(5.0),
                                   child: GestureDetector(
@@ -159,7 +170,8 @@ class _AddNewBlogPageState extends State<AddNewBlogPage> {
                                     child: Chip(
                                       color: selectedTopics.contains(e)
                                           ? const WidgetStatePropertyAll(
-                                              AppPallete.gradient1)
+                                              AppPallete.gradient1,
+                                      )
                                           : null,
                                       label: Text(e),
                                       side: selectedTopics.contains(e)
