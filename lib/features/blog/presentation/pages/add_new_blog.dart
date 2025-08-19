@@ -81,7 +81,7 @@ class _AddNewBlogPageState extends State<AddNewBlogPage> {
         listener: (context, state) {
           if(state is BlogFailure){
             showSnackBar(context, state.error);
-          }else if(state is BlogSuccess){
+          }else if(state is BlogUploadSuccess){
             Navigator.pushAndRemoveUntil(context, BlogPage.route(), (route) =>false);
           }
         },
@@ -143,9 +143,9 @@ class _AddNewBlogPageState extends State<AddNewBlogPage> {
                           'Technology',
                           'Business',
                           'Programming',
-                          'Entertainment'
-                        ]
-                            .map((e) => Padding(
+                          'Entertainment',
+                          'News',
+                        ].map((e) => Padding(
                                   padding: const EdgeInsets.all(5.0),
                                   child: GestureDetector(
                                     onTap: () {
@@ -174,12 +174,9 @@ class _AddNewBlogPageState extends State<AddNewBlogPage> {
                       ),
                     ),
                     const SizedBox(height: 10),
-                    BlogEditor(
-                        controller: titleController, hintText: 'Blog Title'),
+                    BlogEditor(controller: titleController, hintText: 'Blog Title'),
                     const SizedBox(height: 10),
-                    BlogEditor(
-                        controller: contentController,
-                        hintText: 'Blog Content'),
+                    BlogEditor(controller: contentController, hintText: 'Blog Content'),
                   ],
                 ),
               ),

@@ -52,12 +52,11 @@ class _MyAppState extends State<MyApp> {
           return state is AppUserLoggedIn;
         },
         builder: (context, isLoggedIn) {
-          if(isLoggedIn){
+          if (isLoggedIn) {
             return const BlogPage();
           }
           return const LoginPage();
         },
-
       ),
     );
   }
