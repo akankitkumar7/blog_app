@@ -9,7 +9,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class BlogPage extends StatefulWidget {
-
   static route() => MaterialPageRoute(builder: (context) => const BlogPage());
 
   const BlogPage({super.key});
@@ -19,7 +18,6 @@ class BlogPage extends StatefulWidget {
 }
 
 class _BlogPageState extends State<BlogPage> {
-
   @override
   void initState() {
     super.initState();
@@ -48,18 +46,23 @@ class _BlogPageState extends State<BlogPage> {
           }
         },
         builder: (context, state) {
-          if (state is BlogLoading){
+          if (state is BlogLoading) {
             return const Loader();
           }
-          if(state is BlogDisplaySuccess){
-
+          if (state is BlogDisplaySuccess) {
             return ListView.builder(
               itemCount: state.blogs.length,
               itemBuilder: (context, index) {
                 final blog = state.blogs[index];
-                return BlogCard(blog: blog,color: AppPallete.gradient1,);
+                return BlogCard(
+                    blog: blog,
+                    color: index % 3 == 0
+                        ? AppPallete.gradient1
+                        : index % 3 == 1
+                            ? AppPallete.gradient2
+                            : AppPallete.gradient3,
+                );
               },
-
             );
           }
           return const SizedBox();
