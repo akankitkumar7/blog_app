@@ -16,7 +16,10 @@ class BlogRepositoriesImpl implements BlogRepository {
   final BlogRemoteDataSource blogRemoteDataSource;
   final BlogLocalDataSource blogLocalDataSource;
   final ConnectionChecker connectionChecker;
-  BlogRepositoriesImpl(this.blogRemoteDataSource, this.blogLocalDataSource, this.connectionChecker);
+  BlogRepositoriesImpl(
+      this.blogRemoteDataSource,
+      this.blogLocalDataSource,
+      this.connectionChecker);
 
   @override
   Future<Either<Failure, Blog>> uploadBlog({

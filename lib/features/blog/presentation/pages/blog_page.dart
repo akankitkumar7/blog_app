@@ -27,17 +27,47 @@ class _BlogPageState extends State<BlogPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: Container(
+        height: 60,
+        width: 60,
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          gradient: const LinearGradient(
+            colors: [Color(0xFF8E2DE2), Color(0xFF4A00E0)], // Purple gradient
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          ),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withValues(alpha: 0.2),
+              blurRadius: 8,
+              offset: const Offset(2, 4),
+            ),
+          ],
+        ),
+        child: IconButton(
+          onPressed: () {
+            Navigator.push(context, AddNewBlogPage.route());
+          },
+          icon: const Icon(
+            CupertinoIcons.add,
+            color: Colors.white,
+            size: 28,
+          ),
+        ),
+      ),
+
       appBar: AppBar(
         title: const Text('Blog App'),
         centerTitle: true,
-        actions: [
-          IconButton(
-            onPressed: () {
-              Navigator.push(context, AddNewBlogPage.route());
-            },
-            icon: const Icon(CupertinoIcons.add_circled),
-          ),
-        ],
+        // actions: [
+        //   IconButton(
+        //     onPressed: () {
+        //       Navigator.push(context, AddNewBlogPage.route());
+        //     },
+        //     icon: const Icon(CupertinoIcons.add_circled),
+        //   ),
+        // ],
       ),
       body: BlocConsumer<BlogBloc, BlogState>(
         listener: (context, state) {
@@ -56,11 +86,6 @@ class _BlogPageState extends State<BlogPage> {
                 final blog = state.blogs[index];
                 return BlogCard(
                     blog: blog,
-                    color: index % 3 == 0
-                        ? AppPallete.gradient1
-                        : index % 3 == 1
-                            ? AppPallete.gradient2
-                            : AppPallete.gradient3,
                 );
               },
             );

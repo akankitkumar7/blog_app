@@ -5,7 +5,7 @@ import 'package:blog_app/core/constants/constants.dart';
 import 'package:blog_app/core/theme/app_pallete.dart';
 import 'package:blog_app/core/utils/pick_image.dart';
 import 'package:blog_app/core/utils/snackbar.dart';
-import 'package:blog_app/features/auth/presentation/block/auth_bloc.dart';
+import 'package:blog_app/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:blog_app/features/blog/presentation/bloc/blog_bloc.dart';
 import 'package:blog_app/features/blog/presentation/pages/blog_page.dart';
 import 'package:blog_app/features/blog/presentation/widgets/blog_editor.dart';
