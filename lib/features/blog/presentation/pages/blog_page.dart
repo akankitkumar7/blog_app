@@ -1,5 +1,6 @@
 import 'package:blog_app/core/common/widgets/loader.dart';
 import 'package:blog_app/core/constants/constants.dart';
+import 'package:blog_app/core/theme/app_pallete.dart';
 import 'package:blog_app/core/utils/snackbar.dart';
 import 'package:blog_app/features/blog/presentation/bloc/blog_bloc.dart';
 import 'package:blog_app/features/blog/presentation/pages/add_new_blog.dart';
@@ -72,7 +73,7 @@ class _BlogPageState extends State<BlogPage> {
         width: 60,
         decoration: BoxDecoration(
           shape: BoxShape.circle,
-          color: Colors.blue,
+          color: AppPallete.blueColor,
           boxShadow: [
             BoxShadow(
               color: Colors.black.withValues(alpha: 0.2),
@@ -87,7 +88,7 @@ class _BlogPageState extends State<BlogPage> {
           },
           icon: const Icon(
             CupertinoIcons.add,
-            color: Colors.white,
+            color: AppPallete.whiteColor,
             size: 28,
           ),
         ),

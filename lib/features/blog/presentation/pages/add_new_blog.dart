@@ -68,26 +68,30 @@ class _AddNewBlogPageState extends State<AddNewBlogPage> {
     return Scaffold(
       appBar: AppBar(
         actions: [
-          IconButton(
+          TextButton(
             onPressed: () {
               uploadBlog();
             },
-            icon: const Icon(
-              Icons.done_rounded,
-            ),
+            child: selectedTopics.isNotEmpty
+                ? const Text(
+                    'Upload',
+                    style: TextStyle(color: AppPallete.blueColor),
+                  )
+                : const Text('Upload'),
           ),
         ],
       ),
       body: BlocConsumer<BlogBloc, BlogState>(
         listener: (context, state) {
-          if(state is BlogFailure){
+          if (state is BlogFailure) {
             showSnackBar(context, state.error);
-          }else if(state is BlogUploadSuccess){
-            Navigator.pushAndRemoveUntil(context, BlogPage.route(), (route) =>false);
+          } else if (state is BlogUploadSuccess) {
+            Navigator.pushAndRemoveUntil(
+                context, BlogPage.route(), (route) => false);
           }
         },
         builder: (context, state) {
-          if(state is AuthLoading){
+          if (state is AuthLoading) {
             return const Loader();
           }
           return SingleChildScrollView(
@@ -119,10 +123,10 @@ class _AddNewBlogPageState extends State<AddNewBlogPage> {
                               borderType: BorderType.RRect,
                               strokeCap: StrokeCap.round,
                               dashPattern: const [10, 4],
-                              child: Container(
+                              child: const SizedBox(
                                 height: 115,
                                 width: double.infinity,
-                                child:  const Column(
+                                child: Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Icon(Icons.folder_open, size: 40),
@@ -137,42 +141,43 @@ class _AddNewBlogPageState extends State<AddNewBlogPage> {
                             ),
                           ),
                     const SizedBox(height: 20),
-                    SingleChildScrollView(
-                      scrollDirection: Axis.horizontal,
-                      child: Row(
-                        children: Constants.topics.map((e) => Padding(
-                                  padding: const EdgeInsets.all(5.0),
-                                  child: GestureDetector(
-                                    onTap: () {
-                                      if (selectedTopics.contains(e)) {
-                                        selectedTopics.remove(e);
-                                      } else {
-                                        selectedTopics.add(e);
-                                      }
-                                      setState(() {});
-                                    },
-                                    child: Chip(
-                                      color: selectedTopics.contains(e)
-                                          ? const WidgetStatePropertyAll(
-                                              AppPallete.gradient1,
-                                      )
-                                          : null,
-                                      label: Text(e),
-                                      side: selectedTopics.contains(e)
-                                          ? null
-                                          : const BorderSide(
-                                              color: AppPallete.borderColor,
-                                            ),
-                                    ),
+                    Wrap(
+                      children: Constants.topics
+                          .map((e) => Padding(
+                                padding: const EdgeInsets.all(5.0),
+                                child: GestureDetector(
+                                  onTap: () {
+                                    if (selectedTopics.contains(e)) {
+                                      selectedTopics.remove(e);
+                                    } else {
+                                      selectedTopics.add(e);
+                                    }
+                                    setState(() {});
+                                  },
+                                  child: Chip(
+                                    color: selectedTopics.contains(e)
+                                        ? const WidgetStatePropertyAll(
+                                            AppPallete.gradient1,
+                                          )
+                                        : null,
+                                    label: Text(e),
+                                    side: selectedTopics.contains(e)
+                                        ? null
+                                        : const BorderSide(
+                                            color: AppPallete.borderColor,
+                                          ),
                                   ),
-                                ))
-                            .toList(),
-                      ),
+                                ),
+                              ))
+                          .toList(),
                     ),
                     const SizedBox(height: 10),
-                    BlogEditor(controller: titleController, hintText: 'Blog Title'),
+                    BlogEditor(
+                        controller: titleController, hintText: 'Blog Title'),
                     const SizedBox(height: 10),
-                    BlogEditor(controller: contentController, hintText: 'Blog Content'),
+                    BlogEditor(
+                        controller: contentController,
+                        hintText: 'Blog Content'),
                   ],
                 ),
               ),
