@@ -6,9 +6,7 @@ import 'package:flutter/material.dart';
 
 class BlogViewerPage extends StatelessWidget {
   static route(Blog blog) => MaterialPageRoute(
-      builder: (context) => BlogViewerPage(
-            blog: blog,
-          ));
+      builder: (context) => BlogViewerPage(blog: blog));
   final Blog blog;
 
   const BlogViewerPage({super.key, required this.blog});
@@ -18,6 +16,9 @@ class BlogViewerPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(),
       body: Scrollbar(
+        interactive: true,
+        thickness: 6,
+        radius: const Radius.circular(10),
         child: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.all(16.0),

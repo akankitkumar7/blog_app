@@ -9,7 +9,7 @@ class AppTheme {
   static final darkThemeMode = ThemeData.dark().copyWith(
     scaffoldBackgroundColor: AppPallete.backgroundColor,
     appBarTheme: const AppBarTheme(
-      color: AppPallete.backgroundColor,
+      backgroundColor: AppPallete.backgroundColor,
     ),
     chipTheme: const ChipThemeData(
       color: WidgetStatePropertyAll(AppPallete.backgroundColor),
@@ -18,7 +18,7 @@ class AppTheme {
     inputDecorationTheme: InputDecorationTheme(
       border: _border(),
       contentPadding: const EdgeInsets.all(27),
-      focusedBorder: _border(AppPallete.gradient2),
+      // focusedBorder: _border(AppPallete.gradient2),
       enabledBorder: _border(),
       errorBorder: _border(AppPallete.errorColor),
       disabledBorder: _border(),

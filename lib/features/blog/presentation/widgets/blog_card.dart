@@ -3,6 +3,7 @@ import 'package:blog_app/core/utils/format_date.dart';
 import 'package:blog_app/features/blog/domain/entities/blog.dart';
 import 'package:blog_app/features/blog/presentation/pages/blog_viewer_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class BlogCard extends StatelessWidget {
   final Blog blog;
@@ -27,12 +28,12 @@ class BlogCard extends StatelessWidget {
           children: [
             // Blog Image
             SizedBox(
-                width: double.infinity,
-                child: Image.network(
-                  blog.imageUrl,
-                  fit: BoxFit.contain, // ensures full image is visible
-                ),
+              width: double.infinity,
+              child: Image.network(
+                blog.imageUrl,
+                fit: BoxFit.contain, // ensures full image is visible
               ),
+            ),
 
             const SizedBox(height: 6),
 
