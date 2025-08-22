@@ -1,4 +1,4 @@
-package com.example.blog_app
+package com.ankit.inkspire
 
 import io.flutter.embedding.android.FlutterActivity
 

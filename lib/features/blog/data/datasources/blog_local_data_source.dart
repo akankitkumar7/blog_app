@@ -27,9 +27,9 @@ class BlogLocalDataSourceImpl implements BlogLocalDataSource {
   void uploadLocalBlogs({required List<BlogModel> blogs}) {
     box.clear(); // clear all the previous blogs in case to avoid duplicate blog.
     box.write(() => {
-          for (int i = 0; i < blogs.length; i++)
-            {
+          for (int i = 0; i < blogs.length; i++){
               box.put(i.toString(), blogs[i].toJson()),
+
             }
         });
   }

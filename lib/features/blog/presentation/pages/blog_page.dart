@@ -50,9 +50,7 @@ class _BlogPageState extends State<BlogPage> {
   }
 
   void _filterBlogs(String query) {
-    // Assuming you have access to Constants.topics somewhere
-    // For demonstration, I'll use a placeholder list
-    const List<String> allTopics = Constants.topics; // Replace with your actual topics
+    const List<String> allTopics = Constants.topics;
 
     setState(() {
       if (query.isEmpty) {
@@ -106,7 +104,7 @@ class _BlogPageState extends State<BlogPage> {
           style: const TextStyle(color: Colors.white),
           onChanged: _filterBlogs,
         )
-            : const Text('Blog App'),
+            : Image.asset("assets/logo/app_name_text.png",height: 60,width: 100,),
         actions: [
           if (_isSearching)
             IconButton(
