@@ -42,8 +42,12 @@ class BlogCard extends StatelessWidget {
                 fit: BoxFit.contain,
                 loadingBuilder: (context, child, loadingProgress) {
                   if (loadingProgress == null) return child;
-                  return const Center(
-                    child: Loader(), // 👈 loader stays centered
+                  return const SizedBox(
+                    height: 200,
+                    width: double.infinity,
+                    child: Center(
+                      child: Loader(),
+                    ),
                   );
                 },
                 errorBuilder: (context, error, stackTrace) {
@@ -52,7 +56,7 @@ class BlogCard extends StatelessWidget {
                     height: 200,
                     child: Center(
                       child: Text(
-                        "No Internet Connection",
+                        "Turn on your internet to view images.",
                         style: TextStyle(color: AppPallete.greyColor),
                       ),
                     ),

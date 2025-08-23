@@ -54,11 +54,11 @@ class BlogViewerPage extends StatelessWidget {
                     width: double.infinity,
                     loadingBuilder: (context, child, loadingProgress) {
                       if (loadingProgress == null) return child;
-
                       return const SizedBox(
                         width: double.infinity,
+                        height: 200,
                         child: Center(
-                          child: Loader(), // 👈 loader stays centered
+                          child: Loader(),
                         ),
                       );
                     },
@@ -68,7 +68,7 @@ class BlogViewerPage extends StatelessWidget {
                         height: 200,
                         child: Center(
                           child: Text(
-                            "No Internet Connection",
+                            "Turn on your internet to view images.",
                             style: TextStyle(color: AppPallete.greyColor),
                           ),
                         ),
@@ -77,8 +77,7 @@ class BlogViewerPage extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 20),
-                Text(blog.content,
-                    style: const TextStyle(fontSize: 16, height: 2)),
+                Text(blog.content, style: const TextStyle(fontSize: 16, height: 2,)),
               ],
             ),
           ),

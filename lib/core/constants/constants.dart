@@ -17,5 +17,5 @@ class Constants{
     'Startups',
     'Politics',
   ];
-  static const noConnectionMessage = 'No Internet Connection';
+  static const noConnectionMessage = '⚠️ Oops! Looks like you’re offline.';
 }
