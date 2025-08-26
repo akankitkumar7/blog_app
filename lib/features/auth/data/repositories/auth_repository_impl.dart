@@ -65,7 +65,7 @@ class AuthRepositoryImpl implements AuthRepository {
 
   Future<Either<Failure, User>> _getUser(Future<User> Function() fn) async {
     try {
-      if( ! await (connectionChecker.isConnected)){
+      if(!await (connectionChecker.isConnected)){
         return left(Failure(Constants.noConnectionMessage));
       }
       final user = await fn();
