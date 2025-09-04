@@ -17,5 +17,5 @@ class Constants{
     'Startups',
     'Politics',
   ];
-  static const noConnectionMessage = '⚠️ Oops! Looks like you’re offline.';
+  static const noConnectionMessage = 'Oops! Looks like you’re offline.';
 }
