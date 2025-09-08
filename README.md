@@ -1,4 +1,4 @@
-# 🖋️ INKSPIRE – A Modern Blog App  
+# 🖋️ INKSPIRE – A Blog App  
 
 INKSPIRE is a cross-platform blog application built with **Flutter** and powered by **Supabase**.  
 It provides a seamless platform for users to **create, share, and read blogs** with secure authentication and real-time updates.  
