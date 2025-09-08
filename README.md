@@ -1,16 +1,29 @@
-# blog_app
+# 🖋️ INKSPIRE – A Modern Blog App  
 
-A new Flutter project.
+INKSPIRE is a cross-platform blog application built with **Flutter** and powered by **Supabase**.  
+It provides a seamless platform for users to **create, share, and read blogs** with secure authentication and real-time updates.  
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## 🚀 Tech Stack  
+- **Frontend:** Flutter, Dart  
+- **State Management:** BLoC & Cubit (for authentication persistence and app state)  
+- **Backend:** Supabase (PostgreSQL + Auth + Storage)  
+- **Architecture:** Clean Architecture with layered separation of concerns  
 
-A few resources to get you started if this is your first Flutter project:
+---
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## ✨ Features  
+- 🔑 User Authentication – Create an account & log in securely (with auth persistence)
+- 📝 Create Blog – Write and upload blogs with ease  
+- 📖 Read Blog – Explore blogs uploaded by users in real time  
+- ☁️ Supabase Integration – Cloud database for blog storage and authentication  
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+---
+![Screenshot_20250822_222242](https://github.com/user-attachments/assets/416a8ed6-ac50-4a77-ba5a-f83a601adce9)
+![Screenshot_20250822_224947](https://github.com/user-attachments/assets/55f2bd1f-edc8-4a9d-9a7f-c9c7dbccb7b7)
+![Screenshot_20250822_224938](https://github.com/user-attachments/assets/98494580-3f30-4ff3-9828-01c73892a34f)
+![Screenshot_20250822_224930](https://github.com/user-attachments/assets/5f12d210-fa8f-4fcb-b6fe-61167b4c384e)
+![Screenshot_20250822_222246](https://github.com/user-attachments/assets/c1b11e65-57c2-4fbb-b9a4-9aba1a7b9512)
+
+
